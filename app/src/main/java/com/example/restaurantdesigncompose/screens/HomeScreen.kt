@@ -107,46 +107,62 @@ fun HomeScreen() {
             modifier = Modifier
                 .height(650.dp)
                 .fillMaxWidth()
-        ){
+        ) {
 
             Spacer(modifier = Modifier.height(15.dp))
 
-            Image(painter = painterResource(id=R.drawable.item),
+            Image(
+                painter = painterResource(id = R.drawable.item),
                 contentDescription = "item",
-                modifier = Modifier.width(360.dp).height(120.dp))
+                modifier = Modifier
+                    .width(360.dp)
+                    .height(120.dp)
+            )
 
             Spacer(modifier = Modifier.height(15.dp))
 
-            Image(painter = painterResource(id=R.drawable.item),
+            Image(
+                painter = painterResource(id = R.drawable.item),
                 contentDescription = "item",
-                modifier = Modifier.width(360.dp).height(120.dp))
+                modifier = Modifier
+                    .width(360.dp)
+                    .height(120.dp)
+            )
 
             Spacer(modifier = Modifier.height(15.dp))
 
-            Image(painter = painterResource(id=R.drawable.item),
+            Image(
+                painter = painterResource(id = R.drawable.item),
                 contentDescription = "item",
-                modifier = Modifier.width(360.dp).height(120.dp))
+                modifier = Modifier
+                    .width(360.dp)
+                    .height(120.dp)
+            )
 
             Spacer(modifier = Modifier.height(15.dp))
 
-            Image(painter = painterResource(id=R.drawable.item),
+            Image(
+                painter = painterResource(id = R.drawable.item),
                 contentDescription = "item",
-                modifier = Modifier.width(360.dp).height(120.dp))
+                modifier = Modifier
+                    .width(360.dp)
+                    .height(120.dp)
+            )
 
             Spacer(modifier = Modifier.height(15.dp))
-            Image(painter = painterResource(id=R.drawable.item),
+            Image(
+                painter = painterResource(id = R.drawable.item),
                 contentDescription = "item",
                 contentScale = ContentScale.FillBounds,
-                modifier = Modifier.width(360.dp).height(120.dp))
-
-
+                modifier = Modifier
+                    .width(360.dp)
+                    .height(120.dp)
+            )
 
         }
 
     }
-
-
-
+    
 }
 
 
