@@ -104,7 +104,7 @@ fun ForgotPasswordScreen() {
             }
         )
 
-        Spacer(modifier = Modifier.height(60.dp))
+        Spacer(modifier = Modifier.height(130.dp))
 
         Button(onClick = {},
             modifier = Modifier.width(330.dp).height(50.dp),
