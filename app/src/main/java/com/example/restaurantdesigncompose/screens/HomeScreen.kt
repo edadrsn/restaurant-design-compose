@@ -31,11 +31,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -166,10 +167,11 @@ fun HomeScreen() {
 }
 
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
     RestaurantDesignComposeTheme {
         HomeScreen()
     }
-}
+}*/

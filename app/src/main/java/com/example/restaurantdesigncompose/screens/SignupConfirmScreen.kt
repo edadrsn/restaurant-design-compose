@@ -21,11 +21,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
 @Composable
-fun SignupConfirmScreen() {
+fun SignupConfirmScreen(navController: NavController) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -65,11 +66,12 @@ fun SignupConfirmScreen() {
 }
 
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun SignupConfirmPreview() {
     RestaurantDesignComposeTheme {
         SignupConfirmScreen()
     }
-
 }
+ */

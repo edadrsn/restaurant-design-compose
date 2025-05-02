@@ -43,6 +43,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.restaurantdesigncompose.screens.ForgotPasswordScreen
+import com.example.restaurantdesigncompose.screens.HomeScreen
+import com.example.restaurantdesigncompose.screens.LoginScreen
+import com.example.restaurantdesigncompose.screens.ResetPasswordScreen
+import com.example.restaurantdesigncompose.screens.SignUpScreen
+import com.example.restaurantdesigncompose.screens.SignupConfirmScreen
+import com.example.restaurantdesigncompose.screens.StartScreen
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,23 +60,46 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
+            val navController = rememberNavController()
+
             RestaurantDesignComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
+                        //NAVIGASYON OLUŞTURMA
+                        //NavHost:hangi ekranda ne gösterileceğini ve sayfalar arası geçişleri nasıl yöneteceğini belirler. Yani:
+                        //Başlangıç ekranını (startDestination) belirler.
+                        //Hangi ekrana hangi route (isimle) geçileceğini tanımlar.
+                        //NavController ile birlikte çalışarak butona tıklanınca hangi ekran açılacak sorusunun cevabını verir
+
+                        NavHost(navController = navController, startDestination = "StartScreen") {
+                            composable("StartScreen") {
+                                StartScreen(navController)
+                            }
+                            composable("SignUpScreen") {
+                                SignUpScreen(navController)
+                            }
+                            composable("LoginScreen") {
+                                LoginScreen(navController)
+                            }
+                            composable("ForgotPasswordLogin") {
+                                ForgotPasswordScreen(navController)
+                            }
+                            composable("ResetPasswordScreen") {
+                                ResetPasswordScreen(navController)
+                            }
+                            composable("HomeScreen") {
+                                HomeScreen(navController)
+                            }
+                            composable("SignupConfirmScreen") {
+                                SignupConfirmScreen(navController)
+                            }
                         }
                     }
                 }
             }
         }
     }
-
-
-//NavController (sayfa geçişlerini yönetir)
-//NavHost (hangi sayfa nerede belli eder)
-//navigate("sayfa_ismi") (butona tıklayınca geçişi sağlar)
-
-
-
+}
 
 
 @Preview(showBackground = true)

@@ -38,13 +38,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 import androidx.compose.material3.Text as Text
 
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -213,10 +214,11 @@ fun SignUpScreen() {
 }
 
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenPreview() {
     RestaurantDesignComposeTheme {
         SignUpScreen()
     }
-}
+}*/

@@ -30,11 +30,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
 @Composable
-fun ForgotPasswordScreen() {
+fun ForgotPasswordScreen(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
@@ -123,10 +124,11 @@ fun ForgotPasswordScreen() {
 }
 
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun ForgotPasswordPreview() {
     RestaurantDesignComposeTheme {
         ForgotPasswordScreen()
     }
-}
+}*/

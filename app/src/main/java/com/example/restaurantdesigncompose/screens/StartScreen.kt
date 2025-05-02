@@ -24,7 +24,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
 @Composable
-fun StartScreen() {
+fun StartScreen(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -63,6 +63,7 @@ fun StartScreen() {
         // Customer butonu
         Button(
             onClick = {
+                navController.navigate("SignupScreen")
             },
             modifier = Modifier
                 .padding(start = 30.dp)
@@ -80,10 +81,11 @@ fun StartScreen() {
 }
 
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun StartScreenPreview() {
     RestaurantDesignComposeTheme {
         StartScreen()
     }
-}
+}*/
