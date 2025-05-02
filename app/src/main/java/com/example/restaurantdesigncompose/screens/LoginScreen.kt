@@ -60,11 +60,9 @@ fun LoginScreen() {
 
         Text(
             text = "Login",
+            fontWeight = FontWeight.W500,
             style = MaterialTheme.typography.displayLarge,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .align(Alignment.Start)
-                .padding(start = 25.dp)
+            modifier = Modifier.align(Alignment.Start).padding(start = 35.dp)
         )
 
         Spacer(modifier = Modifier.height(10.dp))
