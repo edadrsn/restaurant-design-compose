@@ -53,8 +53,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            val navController = rememberNavController() // Sayfa geçişlerini yönetmek için navController tanımı
-
             RestaurantDesignComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
@@ -72,55 +70,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-
-@Composable
-fun SignUpScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 40.dp)
-        ) {
-            // Üstteki görsel
-            Image(
-                bitmap = ImageBitmap.imageResource(R.drawable.illustration1),
-                contentDescription = "image",
-                modifier = Modifier.size(300.dp, 300.dp)
-            )
-
-            // Başlık
-            Text(
-                text = "Sign Up",
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(end = 200.dp)
-            )
-
-            Spacer(modifier = Modifier.padding(15.dp))
-
-            // Telefon numarası girişi alanı (şimdilik sabit)
-            Row {
-                Image(
-                    bitmap = ImageBitmap.imageResource(R.drawable.calling),
-                    contentDescription = "call image",
-                    modifier = Modifier.size(30.dp, 30.dp)
-                )
-                TextField(
-                    value = "Phone",
-                    onValueChange = {}, // Buraya kullanıcıdan giriş alacak şekilde ayarlama yapılabilir
-                    modifier = Modifier
-                        .width(200.dp)
-                        .height(50.dp)
-                )
-            }
-        }
-    }
-}
 
 
 @Preview(showBackground = true)
