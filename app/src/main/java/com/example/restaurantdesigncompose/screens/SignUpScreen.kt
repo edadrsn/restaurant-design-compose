@@ -65,11 +65,9 @@ fun SignUpScreen() {
 
         Text(
             text = "Sign Up",
-            style = MaterialTheme.typography.displayMedium,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .align(Alignment.Start)
-                .padding(start = 10.dp)
+            fontWeight = FontWeight.W500,
+            style = MaterialTheme.typography.displayLarge,
+            modifier = Modifier.align(Alignment.Start).padding(start = 35.dp)
         )
 
         Spacer(modifier = Modifier.padding(10.dp))
