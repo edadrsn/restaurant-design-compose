@@ -108,6 +108,7 @@ fun ForgotPasswordScreen() {
 
         Button(onClick = {},
             modifier = Modifier.width(330.dp).height(50.dp),
+            shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor =Color(0xFF64FCD9),
                 contentColor = Color.Black
