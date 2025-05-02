@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
                             composable("LoginScreen") {
                                 LoginScreen(navController)
                             }
-                            composable("ForgotPasswordLogin") {
+                            composable("ForgotPasswordScreen") {
                                 ForgotPasswordScreen(navController)
                             }
                             composable("ResetPasswordScreen") {

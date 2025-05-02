@@ -39,6 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 import androidx.compose.material3.Text as Text
@@ -59,7 +60,7 @@ fun SignUpScreen(navController: NavController) {
             contentDescription = "illustration image",
             modifier = Modifier
                 .width(300.dp)
-                .height(300.dp)
+                .height(250.dp)
         )
 
         Spacer(modifier = Modifier.padding(10.dp))
@@ -67,7 +68,7 @@ fun SignUpScreen(navController: NavController) {
         Text(
             text = "Sign Up",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier.align(Alignment.Start).padding(start = 35.dp)
         )
 
@@ -88,8 +89,8 @@ fun SignUpScreen(navController: NavController) {
             label = { Text(text = "Mobile", color = Color.Gray) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
                 focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Image(
@@ -111,8 +112,8 @@ fun SignUpScreen(navController: NavController) {
             label = { Text(text = "Fullname", color = Color.Gray) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Image(
@@ -135,8 +136,8 @@ fun SignUpScreen(navController: NavController) {
             label = { Text(text = "Email", color = Color.Gray) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Image(
@@ -158,8 +159,8 @@ fun SignUpScreen(navController: NavController) {
             label = { Text(text = "Password", color = Color.Gray) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent, // Odaklanıldığında arka plan rengini şeffaf yapar
+                unfocusedContainerColor = Color.Transparent  // Odak dışındayken arka plan rengini şeffaf yapar
             ),
             leadingIcon = {
                 Image(
@@ -180,10 +181,12 @@ fun SignUpScreen(navController: NavController) {
                 .padding(start = 5.dp)
         )
 
-        Spacer(modifier = Modifier.padding(15.dp))
+        Spacer(modifier = Modifier.padding(5.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate("LoginScreen")
+            },
             modifier = Modifier
                 .width(330.dp)
                 .height(50.dp),
@@ -193,10 +196,10 @@ fun SignUpScreen(navController: NavController) {
                 contentColor = Color(0xFF000000)
             )
         ) {
-            Text(text = "Continue", fontSize = 17.sp)
+            Text(text = "Continue", fontSize = 18.sp)
         }
 
-        Spacer(modifier = Modifier.padding(10.dp))
+        Spacer(modifier = Modifier.padding(5.dp))
 
         Row(horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
@@ -219,6 +222,6 @@ fun SignUpScreen(navController: NavController) {
 @Composable
 fun SignUpScreenPreview() {
     RestaurantDesignComposeTheme {
-        SignUpScreen()
+        SignUpScreen(navController = rememberNavController())
     }
 }*/

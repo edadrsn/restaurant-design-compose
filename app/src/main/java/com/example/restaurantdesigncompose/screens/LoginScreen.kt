@@ -1,6 +1,7 @@
 package com.example.restaurantdesigncompose.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,6 +38,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
@@ -52,8 +54,7 @@ fun LoginScreen(navController: NavController) {
             contentDescription = "Login image",
             modifier = Modifier
                 .width(300.dp)
-                .height(300.dp)
-                .padding(top = 20.dp)
+                .height(250.dp)
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -61,11 +62,11 @@ fun LoginScreen(navController: NavController) {
         Text(
             text = "Login",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier.align(Alignment.Start).padding(start = 35.dp)
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(15.dp))
 
         val email = remember { mutableStateOf("") }
         val password = remember { mutableStateOf("") }
@@ -75,8 +76,8 @@ fun LoginScreen(navController: NavController) {
             shape = RoundedCornerShape(16.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Image(
@@ -87,10 +88,10 @@ fun LoginScreen(navController: NavController) {
             },
             modifier = Modifier
                 .width(330.dp)
-                .height(50.dp),
+                .height(30.dp)
         )
 
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(40.dp))
 
         TextField(
             value = password.value,
@@ -99,8 +100,8 @@ fun LoginScreen(navController: NavController) {
             shape = RoundedCornerShape(16.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             colors = TextFieldDefaults.colors(
-                unfocusedLabelColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Image(
@@ -111,7 +112,7 @@ fun LoginScreen(navController: NavController) {
             },
             modifier = Modifier
                 .width(330.dp)
-                .height(50.dp)
+                .height(30.dp)
         )
 
         Spacer(modifier = Modifier.height(15.dp))
@@ -127,7 +128,9 @@ fun LoginScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(15.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate("ForgotPasswordScreen")
+            },
             modifier = Modifier
                 .width(330.dp)
                 .height(50.dp),
@@ -137,14 +140,14 @@ fun LoginScreen(navController: NavController) {
                 contentColor = Color.Black
             )
         ) {
-            Text(text = "Continue", fontSize = 20.sp)
+            Text(text = "Continue", fontSize = 18.sp)
         }
 
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Text(text = "OR", fontSize = 17.sp, color = Color.Black)
 
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Button(
             onClick = {},
@@ -153,7 +156,7 @@ fun LoginScreen(navController: NavController) {
                 .height(50.dp),
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFF3F2F2)
+                containerColor = Color(0xFFD7D2D2)
             )
         ) {
 
@@ -164,10 +167,10 @@ fun LoginScreen(navController: NavController) {
                 modifier = Modifier.size(24.dp),
                 tint = Color.Unspecified
             )
-            Spacer(modifier = Modifier.padding(35.dp))
+            Spacer(modifier = Modifier.padding(30.dp))
             Text(
-                text = "Login With Google",
-                fontSize = 20.sp,
+                text = "Login with Google",
+                fontSize = 15.sp,
                 fontWeight = FontWeight.W400,
                 color = Color.Black
             )
@@ -176,13 +179,14 @@ fun LoginScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+            },
             modifier = Modifier
                 .width(330.dp)
                 .height(50.dp),
             shape = RoundedCornerShape(16.dp),
             colors=ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFF3F2F2)
+                containerColor = Color(0xFFD7D2D2)
             )
         ) {
             Icon(
@@ -194,8 +198,8 @@ fun LoginScreen(navController: NavController) {
             Spacer(modifier = Modifier.padding(30.dp))
 
             Text(
-                text = "Login With Facebok",
-                fontSize = 20.sp,
+                text = "Login with Facebok",
+                fontSize = 15.sp,
                 fontWeight = FontWeight.W400,
                 color = Color.Black
             )
@@ -214,11 +218,11 @@ fun LoginScreen(navController: NavController) {
 }
 
 
-/*
+
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
     RestaurantDesignComposeTheme {
-        LoginScreen()
+        LoginScreen(navController = rememberNavController())
     }
-}*/
+}

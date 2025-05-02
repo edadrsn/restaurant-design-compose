@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
@@ -41,14 +42,14 @@ fun ForgotPasswordScreen(navController: NavController) {
         modifier = Modifier.fillMaxSize()
     ) {
 
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(35.dp))
 
         Image(
             painter = painterResource(id = R.drawable.group2),
             contentDescription = "Forgot Password Image",
             modifier = Modifier
                 .width(300.dp)
-                .height(260.dp)
+                .height(250.dp)
         )
 
         Spacer(modifier = Modifier.height(30.dp))
@@ -56,7 +57,7 @@ fun ForgotPasswordScreen(navController: NavController) {
         Text(
             text = "Forgot",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier
                 .align(Alignment.Start)
                 .padding(start = 35.dp)
@@ -65,7 +66,7 @@ fun ForgotPasswordScreen(navController: NavController) {
         Text(
             text = "Password?",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier
                 .align(Alignment.Start)
                 .padding(start = 35.dp)
@@ -91,8 +92,8 @@ fun ForgotPasswordScreen(navController: NavController) {
             label = {Text(text = "Email",color=Color.Gray)},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             colors=TextFieldDefaults.colors(
-                unfocusedTextColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             modifier = Modifier
                 .width(330.dp)
@@ -105,9 +106,11 @@ fun ForgotPasswordScreen(navController: NavController) {
             }
         )
 
-        Spacer(modifier = Modifier.height(130.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
-        Button(onClick = {},
+        Button(onClick = {
+            navController.navigate("ResetPasswordScreen")
+        },
             modifier = Modifier.width(330.dp).height(50.dp),
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
@@ -115,8 +118,8 @@ fun ForgotPasswordScreen(navController: NavController) {
                 contentColor = Color.Black
             )) {
             Text(text="Submit",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.W400)
+                fontSize = 18.sp,
+                fontWeight = FontWeight.W500)
         }
 
 
@@ -129,6 +132,6 @@ fun ForgotPasswordScreen(navController: NavController) {
 @Composable
 fun ForgotPasswordPreview() {
     RestaurantDesignComposeTheme {
-        ForgotPasswordScreen()
+        ForgotPasswordScreen(navController = rememberNavController())
     }
 }*/

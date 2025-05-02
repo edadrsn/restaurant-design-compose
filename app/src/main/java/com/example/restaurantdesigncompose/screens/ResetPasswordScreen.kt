@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.restaurantdesigncompose.R
 import com.example.restaurantdesigncompose.ui.theme.RestaurantDesignComposeTheme
 
@@ -47,7 +48,7 @@ fun ResetPasswordScreen(navController: NavController) {
             contentDescription = "Reset Password Image",
             modifier = Modifier
                 .width(300.dp)
-                .height(260.dp)
+                .height(250.dp)
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -55,7 +56,7 @@ fun ResetPasswordScreen(navController: NavController) {
         Text(
             text = "Reset",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier
                 .align(Alignment.Start)
                 .padding(start = 35.dp)
@@ -64,7 +65,7 @@ fun ResetPasswordScreen(navController: NavController) {
         Text(
             text = "Password?",
             fontWeight = FontWeight.W500,
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayMedium,
             modifier = Modifier
                 .align(Alignment.Start)
                 .padding(start = 35.dp)
@@ -81,8 +82,8 @@ fun ResetPasswordScreen(navController: NavController) {
             shape = RoundedCornerShape(16.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             colors = TextFieldDefaults.colors(
-                unfocusedTextColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             modifier = Modifier
                 .width(330.dp)
@@ -106,8 +107,8 @@ fun ResetPasswordScreen(navController: NavController) {
             modifier = Modifier.width(330.dp).height(50.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             colors=TextFieldDefaults.colors(
-                unfocusedTextColor = Color.Transparent,
-                focusedContainerColor = Color.Transparent
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent
             ),
             leadingIcon = {
                 Icon(
@@ -119,10 +120,12 @@ fun ResetPasswordScreen(navController: NavController) {
             }
         )
 
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = Modifier.height(120.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate("HomeScreen")
+            },
             modifier = Modifier
                 .width(330.dp)
                 .height(50.dp),
@@ -133,8 +136,9 @@ fun ResetPasswordScreen(navController: NavController) {
             )
         ) {
             Text(
-                text = "Submitting", fontSize = 20.sp,
-                fontWeight = FontWeight.W400
+                text = "Submitting",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.W500
             )
         }
     }
@@ -147,6 +151,6 @@ fun ResetPasswordScreen(navController: NavController) {
 @Composable
 fun ResetPasswordPreview() {
     RestaurantDesignComposeTheme {
-        ResetPasswordScreen()
+        ResetPasswordScreen(navController = rememberNavController())
     }
 }*/

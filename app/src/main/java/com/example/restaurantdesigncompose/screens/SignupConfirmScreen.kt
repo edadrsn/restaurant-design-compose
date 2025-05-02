@@ -50,9 +50,11 @@ fun SignupConfirmScreen(navController: NavController) {
             fontSize = 20.sp,
             fontWeight = FontWeight.W400)
 
-        Spacer(modifier = Modifier.height(170.dp))
+        Spacer(modifier = Modifier.height(150.dp))
 
-        Button(onClick = {},
+        Button(onClick = {
+            navController.navigate("LoginScreen")
+        },
             modifier = Modifier.width(340.dp).height(50.dp),
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(

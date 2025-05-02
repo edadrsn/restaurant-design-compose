@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,7 +34,7 @@ fun StartScreen(navController: NavController) {
         // Başlık yazısı
         Text(
             text = "You are a",
-            fontSize = 40.sp,
+            style = MaterialTheme.typography.displayMedium,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(start = 30.dp)
         )
@@ -43,7 +44,7 @@ fun StartScreen(navController: NavController) {
         // Restaurant butonu
         Button(
             onClick = {
-
+                navController.navigate("SignupScreen")
             },
             modifier = Modifier
                 .padding(start = 30.dp)
