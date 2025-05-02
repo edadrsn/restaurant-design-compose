@@ -118,7 +118,7 @@ fun SignUpScreen() {
             leadingIcon = {
                 Image(
                     painter = painterResource(id = R.drawable.profile),
-                    contentDescription = "Phone Icon",
+                    contentDescription = "Name Icon",
                     modifier = Modifier.size(20.dp)
                 )
             }
@@ -142,7 +142,7 @@ fun SignUpScreen() {
             leadingIcon = {
                 Image(
                     painter = painterResource(id = R.drawable.work),
-                    contentDescription = "Phone Icon",
+                    contentDescription = "Email Icon",
                     modifier = Modifier.size(20.dp)
                 )
             }
@@ -165,7 +165,7 @@ fun SignUpScreen() {
             leadingIcon = {
                 Image(
                     painter = painterResource(id = R.drawable.password),
-                    contentDescription = "Phone Icon",
+                    contentDescription = "Password Icon",
                     modifier = Modifier.size(20.dp)
                 )
             }
